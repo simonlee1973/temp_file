@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            /* 水平置中 */
+            align-items: center;
+            /* 垂直置中 */
+            height: 100vh;
+            /* 佔滿整個視窗高度 */
+            margin: 0;
+            /* 移除默認邊距 */
+            display: flex;
+            flex-direction: column;
+            /* 垂直排列 */
+            gap: 20px;
+        }
+
+
+
+        .head {
+            width: 200px;
+            /* 頭部的寬度 */
+            height: 100px;
+            /* 頭部的高度 */
+            background-color: red;
+            /* 頭部背景色 */
+            display: flex;
+            justify-content: center;
+            /* 內容水平置中 */
+            align-items: center;
+            /* 內容垂直置中 */
+            border-radius: 10px;
+            /* 圓角邊框 */
+            position: relative;
+            /* 改為相對定位 */
+            margin-bottom: 20px;
+            /* 讓紅色框和綠色框之間有 20px 的間距 */
+
+
+        }
+
+        .body {
+            width: 400px;
+            /* 身體的寬度 */
+            height: 200px;
+            /* 身體的高度 */
+            background-color: green;
+            /* 身體背景色 */
+            display: flex;
+            justify-content: center;
+            /* 內容水平置中 */
+            align-items: center;
+            /* 內容垂直置中 */
+            border-radius: 10px;
+            /* 圓角邊框 */
+        }
+
+
+        table {
+            width: 300px;
+            /* 表格寬度 */
+            height: 80px;
+            /* 表格高度 */
+            border-collapse: collapse;
+            /* 讓邊框合併 */
+            margin: 20px auto;
+            /* 表格置中 */
+            border: none;
+            /* 移除邊框 */
+            border-radius: 10px;
+            /* 圓角邊框 */
+            overflow: hidden;
+            /* 隱藏超出圓角的部分 */
+        }
+
+        td {
+            height: 80px;
+            /* 單元格高度 */
+            text-align: center;
+            /* 文字置中 */
+            vertical-align: middle;
+            /* 文字垂直置中 */
+            border: none;
+            /* 黑色邊框 */
+        }
+
+        .foot {
+            width: 300px;
+            /* 脚部的寬度 */
+            display: flex;
+            justify-content: space-around;
+            /* 水平間隔分布 */
+            align-items: center;
+            /* 垂直置中 */
+            padding: 10px;
+            border-radius: 10px;
+            /* 圓角邊框 */
+            background-color: #f0f0f0;
+            /* 脚部背景色 */
+        }
+
+
+        .blue {
+            background-color: blue;
+            /* 左側單元格藍色 */
+        }
+
+        .yellow {
+            background-color: yellow;
+            /* 右側單元格黃色 */
+        }
+
+
+
+        .divider {
+            border-left: 2px solid red;
+            /* 左邊紅線 */
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+    <!-- 頭 -->
+
+    <div class="head">頭</div>
+
+
+
+    <!-- 身體 -->
+
+    <div class="body">身體</div>
+
+
+    <!-- 腳 -->
+
+    <div class="foot">
+
+
+        <table>
+            <tr>
+                <td class="blue">左腳</td>
+                <td class="yellow divider">右腳</td>
+            </tr>
+        </table>
+
+
+    </div>
+
+
+</body>
+
+</html>

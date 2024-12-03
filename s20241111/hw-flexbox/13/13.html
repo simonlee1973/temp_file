@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            /* 設定方框區間 */
+            box-sizing: border-box;
+        }
+
+        /* 基礎box */
+        .testBox {
+            /* 設定背景顏色 */
+            background-color: pink;
+            /* 設定邊線大小顏色 */
+            border: 10px solid black;
+            /* 設定四邊的導角 */
+            border-radius: 10px;
+            /* 設定BOX 寬度 */
+            width: 100px;
+            /* 設定BOX 高度 */
+            height: 100px;
+            /* 設定陰影 X外推 Y外推 陰影大小 陰影顏色 */
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        /* flex BOX 基本 */
+        .myBaseContainer {
+            display: flex;
+            margin: auto;
+            flex-wrap: wrap;
+        }
+
+        /* flex box */
+        .flexMy {
+            width: 30%;
+            height: 80vh;
+            background-color: aqua;
+            justify-content: space-between;
+        }
+
+        /* flex Item */
+        .flexMyItem {
+            box-sizing: border-box;
+            padding: 0px;
+            text-align: center;
+            margin-top: 20px;
+            margin-left: 10px;
+            margin-right: 30px;
+            width: 120px;
+            height: 180px;
+            background-color: blueviolet;
+            font-size: 10vW;
+            /* 设置缩放基准点为左上角 */
+            transform-origin: top left;
+            /* 放大 1.5 倍 */
+            transform: scale(1.2);
+        }
+
+        .imageb {
+            background-color: rgba(0, 0, 0, 0);
+            background-image: url("./1.png");
+            /* 向左上角移動 100px */
+            /* background-size: 600px 600px; */
+            /* 根據提取區域調整背景圖片大小 */
+            /* 不重複顯示 */
+            background-repeat: no-repeat;
+        }
+
+        /* 設定圖像起始位置 */
+        .image1 {
+            background-position: 0 0;
+        }
+
+        /* 設定圖像起始位置 */
+        .image2 {
+            background-position: 0 -180px;
+        }
+
+        /* 設定圖像起始位置 */
+        .image3 {
+            background-position: -120px -180px;
+        }
+
+        /* 設定圖像起始位置 */
+        .image4 {
+            background-position: -250px -180px;
+        }
+
+        /* 設定圖像起始位置 */
+        .image5 {
+            background-position: -370px -180px;
+        }
+
+        /* 設定圖像起始位置 */
+        .image6 {
+            background-position: -120px -0px;
+        }
+
+        /* 設定圖像起始位置 */
+        .image10 {
+            background-position: -500px -180px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="flexMy myBaseContainer">
+        <div class="flexMyItem image1 imageb"></div>
+        <div class="flexMyItem image2 imageb"></div>
+        <div class="flexMyItem image3 imageb"></div>
+        <div class="flexMyItem image4 imageb"></div>
+        <div class="flexMyItem image5 imageb"></div>
+        <div class="flexMyItem image6 imageb"></div>
+        <div class="flexMyItem image10 imageb"></div>
+    </div>
+</body>
+
+</html>

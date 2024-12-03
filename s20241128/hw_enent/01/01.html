@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>商品展示</title>
+    <style>
+        .box-container {
+            width: 1300px;
+            height: 900px;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(./4.jpg);
+            background-size: 80%;
+            background-repeat: no-repeat;
+            background-position: center;
+
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .box {
+            width: 300px;
+            height: 300px;
+            /* border: 1px solid #ccc; */
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px;
+            margin-top: 60px;
+        }
+
+        .product-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .btn {
+            margin-top: 10px;
+            padding: 20px;
+            background-color: lightblue;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background-color: deepskyblue;
+        }
+
+        .bg-pink {
+            background-color: lightpink;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box-container">
+        <div class="box" id="box1">
+            <img src="./cake1.jpg" class="product-image" alt="商品圖片">
+            <button class="btn" id="btn1" data-original-price="100" data-discounted-price="70">原價 $100元</button>
+        </div>
+
+        <div class="box" id="box2">
+            <img src="./cake2.jpg" class="product-image" alt="商品圖片">
+            <button class="btn" id="btn2" data-original-price="200" data-discounted-price="150">原價 $200元</button>
+        </div>
+
+        <div class="box" id="box3">
+            <img src="./cake3.jpg" class="product-image" alt="商品圖片">
+            <button class="btn" id="btn3" data-original-price="150" data-discounted-price="100">原價 $150元</button>
+        </div>
+    </div>
+
+    <script>
+        // 獲取所有按鈕並設置事件監聽器
+        let buttons = document.querySelectorAll('.btn');
+
+        buttons.forEach(button => {
+            let originalPrice = button.getAttribute('data-original-price');
+            let discountedPrice = button.getAttribute('data-discounted-price');
+
+            // 1. 點擊事件，顯示特價
+            button.addEventListener('click', function () {
+                button.innerHTML = `特價 $${discountedPrice} 元`;
+                button.style.backgroundColor = 'lightcoral'; // 改變顏色
+                button.disabled = true; // 禁用按鈕
+                console.log(`原價：$${originalPrice}，特價：$${discountedPrice}`);
+            });
+
+            // 2. 滑鼠進入事件，顯示特價
+            button.addEventListener('mouseenter', function () {
+                button.innerHTML = `特價 $${discountedPrice} 元`;
+                button.style.backgroundColor = 'lightcoral'; // 顯示特價時按鈕變為 lightcoral
+                // button.setAttribute('class', 'bg-pink');
+                console.log(`顯示特價：$${discountedPrice}`);
+            });
+
+            // 3. 滑鼠離開事件，顯示特價
+            button.addEventListener('mouseleave', function () {
+                button.innerHTML = `特價 $${discountedPrice} 元`;
+                button.style.backgroundColor = 'lightpink'; // 顯示特價時按鈕變為 lightpink
+                console.log(`顯示特價：$${discountedPrice}`);
+            });
+        });
+    </script>
+
+</body>
+
+</html>

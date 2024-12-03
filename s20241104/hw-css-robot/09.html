@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>機器人</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        .robot {
+            width: 200px;
+            height: 400px;
+            /* 增加高度以容納頭部、身體和腿部 */
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* 中心對齊 */
+        }
+
+        .head {
+            width: 70px;
+            /* 縮小頭部 */
+            height: 60px;
+            background-color: blue;
+            /* 藍色頭部 */
+            border-radius: 5px;
+            border: 2px solid black;
+            /* 黑色邊框 */
+            margin-bottom: 10px;
+            /* 頭部與身體之間的間距 */
+        }
+
+        .eyes {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 10px;
+        }
+
+        .eye {
+            width: 10px;
+            /* 縮小眼睛 */
+            height: 10px;
+            background-color: white;
+            border-radius: 50%;
+            border: 2px solid black;
+            /* 黑色邊框 */
+        }
+
+        .body {
+            width: 180px;
+            /* 加寬身體 */
+            height: 250px;
+            /* 身體高度 */
+            background-color: green;
+            /* 綠色身體 */
+            border-radius: 0 0 10px 10px;
+            border: 2px solid black;
+            /* 黑色邊框 */
+            margin-bottom: 5px;
+            /* 調整身體與腿部之間的間距 */
+            display: flex;
+            justify-content: center;
+            /* 文字居中 */
+            align-items: center;
+            /* 文字垂直居中 */
+            font-size: 80px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            /* 調整字體大小 */
+            color: gold;
+            /* 文字顏色 */
+        }
+
+        .legs {
+            display: flex;
+            height: 60px;
+            /* 使用 flexbox 來排列腿部 */
+            justify-content: space-between;
+            /* 在兩側顯示 */
+            width: 150px;
+            /* 確保腿部寬度與身體一致 */
+            position: absolute;
+            /* 絕對定位以對齊 */
+            bottom: 0;
+            /* 對齊底部 */
+        }
+
+        .leg {
+            width: 50px;
+            /* 腿的寬度 */
+            height: 60px;
+            background-color: red;
+            /* 紅色腿部 */
+            border-radius: 0 0 10px 10px;
+            border: 2px solid black;
+            /* 黑色邊框 */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="robot">
+        <div class="head">
+            <div class="eyes">
+                <div class="eye"></div>
+                <div class="eye"></div>
+            </div>
+        </div>
+        <div class="body">10</div>
+        <div class="legs">
+            <div class="leg"></div>
+            <div class="leg"></div>
+        </div>
+    </div>
+</body>
+
+</html>

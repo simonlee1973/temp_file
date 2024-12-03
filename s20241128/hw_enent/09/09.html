@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>商品特價顯示</title>
+    <style>
+        .container {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            margin-top: 50px;
+        }
+
+        .product {
+            text-align: center;
+            width: 300px;
+            cursor: pointer;
+        }
+
+        .product img {
+            width: 100%;
+            height: auto;
+            border: 8px solid gold;
+            border-radius: 30px;
+        }
+
+        .original-price {
+            font-size: 18px;
+            color: #555;
+        }
+
+        .original-price:hover {
+            font-size: 25px;
+            color: blue;
+            text-decoration: line-through;
+        }
+
+        .discount-price {
+            font-size: 25px;
+            font-weight: bold;
+            color: red;
+            margin-top: 10px;
+            display: none;
+            background-color: lightgreen;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="product" id="product1">
+            <h2>Apple手機</h2>
+            <img src="./image/apple.jpg" alt="">
+            <div class="original-price">【Apple】原價: $38000</div>
+            <div class="discount-price">【Apple】特價: $26000</div>
+        </div>
+
+
+        <div class="product" id="product2">
+            <h2>Sony手機</h2>
+            <img src="./image/Sony.jpg" alt="">
+            <div class="original-price">【Sony】原價: $30000</div>
+            <div class="discount-price">【Sony】特價: $22000</div>
+        </div>
+
+
+        <div class="product" id="product3">
+            <h2>Asus手機</h2>
+            <img src="./image/asus.png" alt="">
+            <div class="original-price">【Asus】原價: $20000</div>
+            <div class="discount-price">【Asus】特價: $15000</div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelector('.container').addEventListener('click', function (event) {
+            const product = event.target.closest('.product');
+            const discountPriceElement = product.querySelector('.discount-price');
+            const discountPrice = product.getAttribute('data-discount-price');
+            event.target.textContent = `特價: $${discountPrice}`;
+            discountPriceElement.style.display = 'block';
+            event.target.style.display = 'none';
+        });
+    </script>
+</body>
+
+</html>

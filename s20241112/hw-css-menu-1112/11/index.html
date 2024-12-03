@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>天仁喫茶趣</title>
+    <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+    <script src="https://kit.fontawesome.com/a3ca2244ae.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <!-- ====================== 點餐頁面 ====================== -->
+    <div id="order" class="container">
+        <!-- ==== 橫幅 ==== -->
+        <div class="banner"></div>
+
+        <!-- ==== 主要 ==== -->
+        <div class="main">
+            <!-- Logo -->
+            <div class="logo"></div>
+
+            <!-- 店名 -->
+            <h1>天仁喫茶趣</h1>
+
+            <hr>
+
+            <!-- 商品清單 -->
+            <div id="main-list"></div>
+
+            <!-- 購物車按鈕 -->
+            <div id="check" class="button">查看購物車 <span id="checkoutCost">$ 0</span></div>
+
+        </div>
+
+        <!-- ==== 彈窗 ==== -->
+        <dialog id="infoOrder">
+            <!-- 取消點餐 -->
+            <div class="xmark">
+                <i class="fa-solid fa-circle-xmark endOrder"></i>
+            </div>
+
+            <!-- 選項清單 -->
+            <div id="orderOptions"></div>
+
+            <!-- 確認點餐 -->
+            <div class="endOrder button" data-order="true">
+                加入購物車
+            </div>
+        </dialog>
+    </div>
+
+    <!-- ====================== 結帳頁面 ====================== -->
+    <div id="checkout" class="container">
+        <div class="main">
+            <!-- 返回點餐頁面 -->
+            <div id="return" class="button return">
+                <i class="fa-solid fa-arrow-left"></i> 繼續點餐
+            </div>
+
+            <h2>訂購內容</h2>
+            <div id="checkoutList" class="items-list"></div>
+
+            <hr>
+
+            <!-- 總計 -->
+            <div class="total">
+                <p>
+                    總計：
+                </p>
+                <p>
+                    <span id="totalCost">$ 0</span>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- JS -->
+    <script src="./js/product.js"></script>
+    <script src="./js/script.js"></script>
+</body>
+
+</html>

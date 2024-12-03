@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>商品販售按鈕</title>
+    <style>
+        /* 用來包裹整個內容的容器 */
+        .total {
+
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: 120%;
+            /* background-color: lightpink; */
+            align-items: center;
+
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            /* 水平居中 */
+            align-items: center;
+            /* 垂直居中 */
+            gap: 20px;
+            /* 按鈕區域間距 */
+            height: 70%;
+            width: 90%;
+            /* 使容器充滿整個視窗 */
+            padding: 20px;
+            flex-wrap: wrap;
+            /* background-color: lightblue; */
+            /* 當螢幕大小變小時，換行顯示 */
+        }
+
+        /* 每個商品的顯示區域 */
+        .item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 400px;
+            text-align: center;
+            margin-bottom: 40px;
+
+            /* 每個商品區域底部增加間距 */
+        }
+
+        /* 商品圖片 */
+        .item img {
+            width: 100%;
+            /* 設置圖片寬度為100% */
+            height: auto;
+            /* 高度自動調整 */
+            max-width: 400px;
+            /* 設定最大寬度 */
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        /* 按鈕樣式 */
+        .button {
+            font-size: 38px;
+            padding: 20px;
+            cursor: pointer;
+            width: 150px;
+            height: 80px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .button:hover {
+            background-color: #45a049;
+        }
+
+        /* 價錢顯示樣式 */
+        .price,
+        .discount-price {
+            font-size: 34px;
+            color: #333;
+        }
+
+        /* 折扣顯示樣式 */
+        .discount {
+            font-size: 38px;
+            color: red;
+        }
+
+        /* 顯示總價 */
+        .total-price {
+            font-size: 38px;
+            font-weight: bold;
+            margin-top: 0px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="total">
+
+
+        <div class="container">
+            <!-- 商品1 -->
+            <div class="item">
+                <img src="https://lh3.googleusercontent.com/aDk5TNDRI12CQ7_7viZJhcd33pTvYHKDNvSPXn-WcArJkCYKGyQPOJKNrW0TyNm4kwk620ySPgXCw_nPYyiVJNCoFIaWEIGnffZHuqn8pp1bpdIMw_FLTInglqx-VRgLGyff8spq7ObV_I8uiAcml1g"
+                    alt="商品1">
+                <button class="button" id="button1">購買</button>
+                <div class="price" id="price1">單價:$300</div>
+                <div class="discount" id="discount1"></div>
+                <div class="discount-price" id="discount-price1"></div>
+                <div class="total-price" id="total-price1">價格: </div>
+            </div>
+
+            <!-- 商品2 -->
+            <div class="item">
+                <img src="https://lh4.googleusercontent.com/IizkWcO2sgu4P99JDghcXv3wV1X-0HVp6wSD7ilKx-cJ8C7zpffCcrWZ7ugrOKlEiVDkhXi-jQSPLVDwMGwK04GFe2rYDf55lJWcv9r16sHFHzMT9mjTRZREwXUJRHNd-Eqi7Suy-JGwlWSf6M_Kwvc"
+                    alt="商品2">
+                <button class="button" id="button2">購買</button>
+                <div class="price" id="price2">單價:$400</div>
+                <div class="discount" id="discount2"></div>
+                <div class="discount-price" id="discount-price2"></div>
+                <div class="total-price" id="total-price2">價格: </div>
+            </div>
+
+            <!-- 商品3 -->
+            <div class="item">
+                <img src="https://lh5.googleusercontent.com/g646Be6-r_TO_SXzyOCDhdCZan1va49nNvCTUQIedA3rXt5iWIq4LeQq85sNd-jzv4ODDFJr2kHHyk2sl50MUlgk8zT9RO7ka2ZTtEGmg7_cVFebK6Wqtziu6SE2ErLVgHe7zLzKtv5BgxsoB1khiDY"
+                    alt="商品3">
+                <button class="button" id="button3">購買</button>
+                <div class="price" id="price3">單價:$500</div>
+                <div class="discount" id="discount3"></div>
+                <div class="discount-price" id="discount-price3"></div>
+                <div class="total-price" id="total-price3">價格: </div>
+            </div>
+        </div>
+
+        <div class="total-price" id="total-price-all">總價: 0</div>
+    </div>
+    <script>
+        // 用來儲存每個商品的總價
+        let totalPrice1 = 0;
+        let totalPrice2 = 0;
+        let totalPrice3 = 0;
+        let totalPriceAll = 0;
+        let pcs1 = 0;
+        let pcs2 = 0;
+        let pcs3 = 0;
+
+        // 這個函數會隨機產生折扣，並更新相應商品的顯示
+        function applyDiscount(priceId, discountId, discountPriceId, totalPriceId, priceValue, pcs) {
+            const priceElement = document.getElementById(priceId);
+            const discountElement = document.getElementById(discountId);
+            const discountPriceElement = document.getElementById(discountPriceId);
+            const totalPriceElement = document.getElementById(totalPriceId);
+
+            // 取得原價
+            let originalPrice = parseFloat(priceValue);
+
+            // 隨機產生0到50之間的折扣
+            let discount = Math.floor(Math.random() * 51);
+            if (discount > 35)
+                discountElement.innerText = `恐怖折扣: ${discount}%`;
+            else if (discount > 20)
+                discountElement.innerText = `驚喜折扣: ${discount}%`;
+            else
+                discountElement.innerText = `優惠折扣: ${discount}%`;
+
+            // 計算折扣後的價格
+            let discountedPrice = originalPrice * (1 - discount / 100);
+            pcs++;
+            discountPriceElement.innerText = `數量: ${pcs}`;
+
+
+            //discountPriceElement.innerText = `折扣後價格: $${discountedPrice.toFixed(2)}`;
+
+            // 更新總價
+
+
+            if (totalPriceId === 'total-price1') {
+                totalPrice1 += discountedPrice;
+            } else if (totalPriceId === 'total-price2') {
+                totalPrice2 += discountedPrice;
+            } else if (totalPriceId === 'total-price3') {
+                totalPrice3 += discountedPrice;
+            }
+
+
+            // 更新該商品總價顯示
+            totalPriceElement.innerText = `本次折扣後價格: $${discountedPrice.toFixed(2)}`;
+
+
+            // 更新所有商品的總價
+            updateTotalPriceAll();
+        }
+
+        // 更新所有商品總價的函數
+        function updateTotalPriceAll() {
+            totalPriceAll = totalPrice1 + totalPrice2 + totalPrice3;
+            document.getElementById('total-price-all').innerText = `總價: $${totalPriceAll.toFixed(2)}`;
+        }
+
+        // 監聽按鈕的點擊事件，並執行折扣和總價計算
+        document.getElementById('button1').addEventListener('click', function () {
+            applyDiscount('price1', 'discount1', 'discount-price1', 'total-price1', '300', pcs1);
+            pcs1++;
+        });
+        document.getElementById('button2').addEventListener('click', function () {
+            applyDiscount('price2', 'discount2', 'discount-price2', 'total-price2', '400', pcs2);
+            pcs2++;
+        });
+        document.getElementById('button3').addEventListener('click', function () {
+            applyDiscount('price3', 'discount3', 'discount-price3', 'total-price3', '500', pcs3);
+            pcs3++;
+        });
+    </script>
+
+</body>
+
+</html>

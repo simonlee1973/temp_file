@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>旅遊景點</title>
+    <style>
+        #container {
+            display: flex;
+            flex: auto;
+            margin: auto;
+            align-items: center;
+            width: 1500px;
+            height: 85vh;
+            background-color: lightblue;
+            text-align: center;
+            /* border-radius: 20%; */
+        }
+
+        .photo-box {
+            margin-left: 80px;
+            margin-right: 80px;
+            width: 780px;
+            height: 420px;
+            background-color: #3498db;
+            border-radius: 8px;
+            overflow: hidden;
+            cursor: pointer;
+            border-radius: 15%;
+            background-size: cover;
+            background-position: center;
+            transition: background-color 0.3s ease;
+        }
+
+        /* 圖片設置 */
+        .photo-box img {
+            width: 100%;
+            height: 70%;
+            object-fit: cover;
+            background-position: center;
+        }
+
+        /* 顯示價格的區域 */
+        .price {
+            width: 100%;
+            height: 30%;
+            background-color: #34495e;
+            color: white;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        /* 不同背景顏色的class */
+        .bg-blue {
+            background-color: #3498db;
+        }
+
+        .bg-pink {
+            background-color: #f39c12;
+        }
+
+        .bg-green {
+            background-color: #2ecc71;
+        }
+
+        /* 當價格改變時的樣式 */
+        .price-updated {
+            color: #e74c3c;
+            font-size: 40px;
+            font-weight: bold;
+            transition: all 0.5s ease;
+            /* 平滑過渡效果 */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 主要容器 -->
+    <div id="container">
+        <!-- 旅遊景點 1 -->
+        <div class="photo-box" id="box1">
+            <img src="./images/韓國.png" alt="旅遊照片1">
+            <div class="price" id="price1"> 【韓國賞櫻之旅】<br>原價 $7,999元 | 免 ! |<br> 限時優惠－點擊享驚喜價 </div>
+        </div>
+        <!-- 旅遊景點 2 -->
+        <div class="photo-box" id="box2">
+            <img src="./images/芬蘭極光.jpg" alt="旅遊照片2">
+            <div class="price" id="price2">【芬蘭極光之旅】<br>原價 $8,999元 | 免 ! |<br>限時優惠－點擊享驚喜價</div>
+        </div>
+        <!-- 旅遊景點 3 -->
+        <div class="photo-box" id="box3">
+            <img src="./images/義大利.jpg" alt="旅遊照片3">
+            <div class="price" id="price3">【義大利之旅】<br>原價 $10,999元 | 免 ! |<br>限時優惠－點擊享驚喜價</div>
+        </div>
+    </div>
+
+    <script>
+        // 設定變數
+        let count1 = 0, count2 = 0, count3 = 0;
+
+        // 獲取每個box和價格顯示區域
+        let box1 = document.getElementById('box1');
+        let box2 = document.getElementById('box2');
+        let box3 = document.getElementById('box3');
+        let price1 = document.getElementById('price1');
+        let price2 = document.getElementById('price2');
+        let price3 = document.getElementById('price3');
+
+        // 設定事件處理函數
+        function changeColorOnClick(box, counter, priceElement, price) {
+            box.addEventListener('click', function () {
+                console.log(`Box ${counter} clicked`);
+                box.classList.toggle('bg-pink');
+                if (counter === 1) count1++;
+                if (counter === 2) count2++;
+                if (counter === 3) count3++;
+
+                console.log(`Box ${counter} click count:`, counter === 1 ? count1 : counter === 2 ? count2 : count3);
+
+                // 當點擊框框時，將價格修改為新的數字
+                let newPrice = price - 1000;
+                priceElement.innerText = `優惠價 $${newPrice}元`; // 修改價格
+
+                // 當價格變更時，應用新的樣式 (顏色 + 字體大小)
+                priceElement.classList.add('price-updated');
+
+                // 延時後移除 price-updated 樣式 (讓動畫顯示效果)
+                setTimeout(() => {
+                    priceElement.classList.remove('price-updated');
+                }, 1000); // 在 1 秒後恢復原來的樣式
+            });
+        }
+
+        function changeColorOnMouseEnter(box) {
+            box.addEventListener('mouseenter', function () {
+                box.classList.add('bg-green');
+            });
+        }
+
+        function changeColorOnMouseLeave(box) {
+            box.addEventListener('mouseleave', function () {
+                box.classList.remove('bg-green');
+                box.classList.add('bg-blue');
+            });
+        }
+
+        // 綁定事件並設定價格
+        changeColorOnClick(box1, 1, price1, 7999);
+        changeColorOnClick(box2, 2, price2, 8999);
+        changeColorOnClick(box3, 3, price3, 10999);
+
+        changeColorOnMouseEnter(box1);
+        changeColorOnMouseEnter(box2);
+        changeColorOnMouseEnter(box3);
+
+        changeColorOnMouseLeave(box1);
+        changeColorOnMouseLeave(box2);
+        changeColorOnMouseLeave(box3);
+    </script>
+
+</body>
+
+</html>

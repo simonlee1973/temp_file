@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robot</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            
+        }
+
+        #head,#main,#arm,#left,#right{
+            border: 1px solid black;
+            border-radius: 10px;
+        }
+
+        #head{
+            text-align: center;
+            margin:auto;
+            background-color: red;
+            width: 80px;
+            height: 80px;
+        }
+
+        #body{
+            display: flex;
+        }
+
+        #main{
+            display: flex;
+            text-align: center;
+            margin:auto;
+            background-color: green;
+            width: 200px;
+            height: 300px;
+        }
+
+        #arm{
+            display: flex;
+            text-align: center;
+            margin:20px 0px;
+            background-color: grey;
+            width: 30px;
+            height: 200px;
+        }
+
+        #feet{
+            text-align: center;
+            margin:auto;
+            table-layout: fixed;
+            width: 150px;
+            height: 100px;
+        }
+
+        #left{
+            width: 50px;
+            background-color: blue;
+        }
+        
+        #right{
+            width: 50px;
+            background-color: yellow;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="all">
+        <!-- 頭 -->
+        <div id="head"> red head </div>
+        <!-- 身體 -->
+        <div id="body">
+            <div id="arm">arm</div>
+            <div id="main">green body</div>
+            <div id="arm">arm</div>
+        </div>
+        <!-- 腳 -->
+        <div>
+            <table id="feet">
+                <tr>
+                    <!-- 左腳 -->
+                    <td id="left">left blue</td>
+                    <td></td>
+                    <!-- 右腳 -->
+                    <td id="right">right yellow</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>50嵐推薦飲品</title>
+    <style>
+        table{
+            width: 80%;
+            margin: auto;
+            border-collapse: collapse;
+            background-color: lightgoldenrodyellow;
+            border-radius: 5%;
+        }
+
+        tr,td{            
+            border: 1px solid lightgoldenrodyellow;
+            text-align: center;
+            height: 30vh;
+            font-size: 30px;
+        }
+        .total{
+            color: lightslategray;
+        }
+        .total::after{
+            content: "元";
+        }
+        .total::before{
+            content: "NT";
+        }
+        input[type="number"]{
+            color: lightblue;
+        }
+        h1{
+    text-align: center;
+    color:lightslategray;
+       }
+       p,label{
+        color:lightslategray;
+       }
+       .menu{
+        border-radius: 10%;
+       }
+    </style>
+</head>
+<body>
+    <h1>50嵐推薦飲品</h1>
+    <table>
+        <tr>
+            <td width="30%">
+            <P>四季春珍波椰</P>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRnOEgFeV46LKLqCbMzfXNzFUDNnb7VswFpjnsPK_gmvc2hAoXkW67lJgRqbU0uP9uXdM&usqp=CAU" class="menu">
+            </td>
+            <td width="30%">
+                <p>
+                    <label for="">數量: </label><input class="text-red" type="number" name="" id="" value="111">
+                </p>
+            </td>
+            <td class="total">
+            <input class="text-red" type="number" name="" id="" value="">
+            </td>
+        </tr>
+        <tr>
+            <td width="30%">
+            <P>奶蓋青茶</P>
+            <img src="data:image/jpeg;base64,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"class="menu">
+            </td>
+            <td width="30%">
+                <p><label for="">數量: </label><input class="text-red" type="number" name="" id="" value="222"></p>
+            </td>
+            <td class="total">
+                <input class="text-red" type="number" name="" id="" value="">
+            </td>
+        </tr>
+        <tr>
+            <td width="30%">
+            <P>紅茶拿鐵</P>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQM9MqvCX66-vChNUXGW4MDbneRI6R0beJlCw&s" class="menu">
+            </td>
+            <td width="30%">
+                <p><label for="">數量: </label><input class="text-red" type="number" name="" id="" value="333"></p>
+            </td>
+            <td class="total">
+                <input class="text-red" type="number" name="" id="" value="">
+            </td>
+        </tr>
+    </table>
+    
+</body>
+</html>

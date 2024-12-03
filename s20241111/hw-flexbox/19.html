@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            display: flex;
+            width: 80%;
+            height: 85vh;
+            margin: auto;
+            background-color: blue;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 10px;
+            /* 每個小容器之間的間距 */
+            padding: 30px;
+            justify-content: space-between;
+
+            /* 大容器內邊距 */
+
+
+        }
+
+        .item {
+
+            padding-top: 2vh;
+            width: 120px;
+            height: 173px;
+            box-sizing: border-box;
+
+            /* 讓 padding 和 margin 包括在內 */
+            border: 1px solid #333;
+            background-color: #ccc;
+            background-repeat: no-repeat;
+            background-image: url('./19.png');
+            background-size: 500%;
+        }
+
+        .image-section1 {
+
+            background-position: -3px -2px;
+
+        }
+
+        .image-section2 {
+
+            background-position: -3px -171px;
+
+        }
+
+        .image-section3 {
+
+            background-position: -119px -2px;
+
+        }
+
+        .image-section4 {
+
+            background-position: -119px -171px;
+
+        }
+
+        .image-section5 {
+
+            background-position: -235px -2px;
+        }
+
+        .image-section6 {
+
+            background-position: -235px -171px;
+
+        }
+
+        .image-section7 {
+
+            background-position: -352px -2px;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="item image-section1"></div>
+        <div class="item image-section2"></div>
+        <div class="item image-section3"></div>
+        <div class="item image-section4"></div>
+        <div class="item image-section5"></div>
+        <div class="item image-section6"></div>
+        <div class="item image-section7"></div>
+
+    </div>
+</body>
+
+</html>

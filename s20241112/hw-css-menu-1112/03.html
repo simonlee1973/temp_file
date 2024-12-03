@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>input</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-size: 26px;
+        }
+
+
+        .img {
+
+            background-image: url(https://bbqchicken.com.tw/images/index/info_title.svg );
+            background-repeat: no-repeat;
+            background-size: 250px, 250px;
+            background-attachment: fixed;
+            background-position: 4% 93%;
+        }
+
+        .boxspace {
+            width: 90vw;
+            height: 10vh;
+        }
+
+        .box {
+            margin: auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            width: 90vw;
+            height: 62vh;
+            /* background-color: aqua; */
+        }
+
+        .items {
+            width: 90vw;
+            height: 10vh;
+            display: flex;
+            align-items: center;
+            /* 垂直居中內容 */
+            justify-content: start;
+
+        }
+
+        .font-weight {
+            font-weight: bold;
+
+        }
+
+        .items label {
+            display: flex;
+            align-items: center;
+            /* 使圖片和文字垂直居中 */
+        }
+
+        input[type="number"] {
+            color: rgb(60, 0, 255);
+
+        }
+
+        .inputW {
+            width: 60px;
+        }
+
+        .boxend {
+            text-align: center;
+            position: relative;
+            right: 15%;
+        }
+
+        .total {
+            color: red;
+            font-weight: bold;
+        }
+
+        .total::after {
+            content: "元";
+        }
+
+        .total::before {
+            content: "NT $";
+        }
+    </style>
+</head>
+
+<body class="img">
+    <div class="boxspace "></div>
+    <form action="" method="get" class="box">
+
+        <div class="items">
+            <label for="">
+                <img src="https://bbqchicken.com.tw/images/maintain/menu/%e7%b6%93%e5%85%b8%e7%82%b8%e9%9b%9e/%e9%9f%93%e5%bc%8f%e6%96%99%e7%90%86%e5%ba%97-%e8%b5%b7%e5%8f%b8%e5%8d%8a%e9%9b%9e.png"
+                    width="150px" height="150px" alt=""><span class="font-weight"> 起司炸雞</span> &nbsp;349元</label>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input class="inputW" type="number" name="" id="" value="1">
+            &nbsp;&nbsp;&nbsp;小計:349元
+        </div>
+
+        <div class="items">
+            <label for="">
+                <img src="https://bbqchicken.com.tw/images/maintain/menu/%e7%b6%93%e5%85%b8%e7%82%b8%e9%9b%9e/%e9%9f%93%e5%bc%8f%e6%96%99%e7%90%86%e5%ba%97-%e8%be%a3%e5%91%b3%e7%87%92%e8%82%89%e9%a2%a8%e5%91%b3.png"
+                    alt="" width="150px" height="150px">
+                <span class="font-weight"> 辣味燒肉風味炸雞</span> &nbsp;349元</label>
+            &nbsp;&nbsp;
+            <input class="inputW" type="number" name="" id="" value="3">&nbsp;&nbsp;&nbsp;小計:1047元
+        </div>
+
+        <div class="items">
+            <label for=""><img
+                    src="https://bbqchicken.com.tw/images/maintain/menu/%e7%b6%93%e5%85%b8%e7%82%b8%e9%9b%9e/%e9%9f%93%e5%bc%8f%e6%96%99%e7%90%86%e5%ba%97-%e9%9f%93%e5%bc%8f%e7%94%98%e9%86%ac%e5%8d%8a%e9%9b%9e.png"
+                    alt="" width="150px" height="150px"><span class="font-weight"> 韓式甘醬炸雞</span> &nbsp;349元</label>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input class="inputW" type="number" name="" id="" value="1">&nbsp;&nbsp;&nbsp;小計:349元
+        </div>
+        <div class="items">
+            <label for=""><img
+                    src="https://bbqchicken.com.tw/images/maintain/menu/%e7%b6%93%e5%85%b8%e7%82%b8%e9%9b%9e/%e9%9f%93%e5%bc%8f%e6%96%99%e7%90%86%e5%ba%97-%e8%9c%82%e8%9c%9c%e8%92%9c%e5%91%b3%e5%8d%8a%e9%9b%9e.png"
+                    alt="" width="150px" height="150px"><span class="font-weight"> 蜂蜜蒜味炸雞</span> &nbsp;349元</label>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input class="inputW" type="number" name="" id="" value="2">&nbsp;&nbsp;&nbsp;小計:698元
+        </div>
+    </form>
+    <hr>
+    <h3 class="boxend">總計:</h3>
+    <div class="boxend total">2443</div>
+</body>
+
+</html>

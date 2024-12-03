@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flexbox 練習</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .container {
+            display: flex;
+            /* 啟用 Flexbox */
+            flex-wrap: wrap;
+            /* 設定項目超過容器寬度時會換行 */
+            width: 80%;
+            height: 90vh;
+            background-color: lightblue;
+            margin: auto;
+            /* 容器居中 */
+
+            flex-direction: row;
+            text-align: center;
+            justify-content: space-between;
+
+        }
+
+        .item {
+            display: flex;
+            justify-content: center;
+            /* 水平居中 */
+            align-items: center;
+            /* 垂直居中 */
+
+            margin-left: 20px;
+            margin-right: 20px;
+            margin-top: 20px;
+            padding-top: 12vh;
+            width: 30%;
+            height: 130px;
+            background-color: lightgray;
+            /* background-image: url('../s20241104/images/bg.png'); */
+            background-size: cover;
+            /* 讓圖片填滿容器 */
+            background-position: center;
+            /* 確保圖片居中 */
+            background-image: url('../14/pica.png');
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+        <div class="item">7</div>
+    </div>
+</body>
+
+</html>

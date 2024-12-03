@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            width: 80vw;
+            height: 80vh;
+            border: 5px double blue;
+            margin: auto;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            padding: 3%;
+        }
+
+        .item{
+            width: 30%;
+            height: 50%;
+            text-align: center;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+        }
+
+        .pic{
+            width: 100%;
+            height: fit-content;
+            /* background-color: blue; */
+        }
+
+        .pic:hover{
+            border: 3px dashed silver;
+        }
+
+        .bg-black{
+            background-color: black;
+        }
+
+        .bg-none{
+            background-color: unset;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item a1">
+            <div class="pic" id="pic1">
+                <img src="https://i.pinimg.com/736x/b7/7d/d0/b77dd047d726b3d2fa913aa4e627ab13.jpg" width="90%" alt="Twicetagram">
+            </div>
+            <div class="descr">
+                <p>Twicetagram</p>
+                <p>2017-10-30</p>
+                <button class="tag" id="price1">原價:568元</button>
+            </div>
+        </div>
+        <div class="item a2">
+            <div class="pic" id="pic2">
+                <img src="https://i.pinimg.com/736x/f2/be/9e/f2be9e83bacefc4ed3612361ee77f744.jpg" alt="Perfect World" width="90%">
+            </div>
+            <div class="descr">
+                <p>Perfect World</p>
+                <p>2021-07-28</p>
+                <button class="tag" id="price2">原價:652元</button>
+            </div>
+        </div>
+        <div class="item a3">
+            <div class="pic" id="pic3">
+                <img src="https://i.pinimg.com/736x/e4/5d/c3/e45dc362d8632688aeb87c579c636495.jpg" alt="With YOU-th" width="90%">
+            </div>
+            <div class="descr">
+                <p>With YOU-th</p>
+                <p>2024-02-23</p>
+                <button class="tag" id="price3">原價:537元</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        let text = '';
+        function enter(obj){
+            text = obj.textContent;
+            obj.textContent = "點擊查看特價";
+        }
+        function leave(obj){
+            obj.textContent=text;
+        }
+
+        let p1 = document.getElementById('price1');
+        // mouseenter
+        p1.addEventListener('mouseenter',function(){
+            console.log('p1 mouseenter ok');
+            enter(this);
+            p1.style.backgroundColor = 'red';
+        });
+
+        // mouseleave
+        p1.addEventListener('mouseleave',function(){
+            console.log('p1 mouseleave ok');
+            leave(this);
+            p1.style.backgroundColor = '';
+        });
+        p1.addEventListener('click',function(){
+            console.log('p1 click ok');
+            p1.textContent='特價:540元';
+            p1.style.backgroundColor = '';
+        })
+
+        let p2 = document.getElementById('price2');
+        // mouseenter
+        p2.addEventListener('mouseenter',function(){
+            console.log('p2 mouseenter ok');
+            enter(this);
+            p2.style.backgroundColor = 'red';
+        });
+
+        // mouseleave
+        p2.addEventListener('mouseleave',function(){
+            console.log('p2 mouseleave ok');
+            leave(this);
+            p2.style.backgroundColor = '';
+        });
+        p2.addEventListener('click',function(){
+            console.log('p2 click ok');
+            p2.textContent='特價:630元';
+            p2.style.backgroundColor = '';
+        })
+
+        
+
+        let p3 = document.getElementById('price3');
+        // mouseenter
+        p3.addEventListener('mouseenter',function(){
+            console.log('p3 mouseenter ok');
+            enter(this);
+            p3.style.backgroundColor = 'red';
+        });
+
+        // mouseleave
+        p3.addEventListener('mouseleave',function(){
+            console.log('p3 mouseleave ok');
+            leave(this);
+            p3.style.backgroundColor = '';
+        });
+
+        p3.addEventListener('click',function(){
+            console.log('p3 click ok');
+            p3.textContent='特價:500元';  
+            p3.style.backgroundColor = '';
+        })
+    </script>
+</body>
+</html>

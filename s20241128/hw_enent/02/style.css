@@ -1,0 +1,81 @@
+* {
+    box-sizing: border-box;
+}
+
+.outer-container {
+    display: flex;
+    /* 父容器使用 flex 來排列兩個內部 container */
+    flex-direction: column;
+    /* 讓容器垂直排列 */
+    justify-content: center;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: lightblue;
+    max-height: 3000px;
+
+}
+
+.container {
+    display: flex;
+    /* 內部 container 仍然是水平排列 */
+    justify-content: center;
+    margin: auto;
+    max-width: 1000px;
+    flex-wrap: wrap;
+    max-height: 3000px;
+    /* 讓子元素可以換行 */
+}
+
+.box1 {
+    width: 200px;
+    height: 200px;
+    background-color: yellow;
+    text-align: center;
+    margin: 10px;
+    border-radius: 8px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 24px;
+    color: black;
+}
+
+a {
+    text-decoration: none;
+    font-size: 50px;
+
+}
+
+button {
+    border-radius: 8px;
+    color: blue;
+}
+
+a:hover {
+    color: black;
+}
+
+@media(max-width:524px) {
+    .box1 {
+        width: 50%;
+    }
+
+    a {
+        width: 50%;
+
+    }
+}
+
+@media(max-width:768px) {
+    .box1 {
+        width: 75%;
+
+    }
+
+    a {
+        width: 75%;
+
+    }
+}

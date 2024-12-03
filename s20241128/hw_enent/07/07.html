@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>購物表單</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .product-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            padding: 20px;
+            margin: 20px;
+        }
+
+        .product-card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .product-info {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .price {
+            font-size: 24px;
+            color: #b12704;
+            margin: 10px 0;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        button:active {
+            background-color: #004080;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="product-card">
+        <img src="././images/wine_01.png" alt="紅酒商品圖片">
+        <div class="product-info">
+            <h3>LYNCH BAGES 紅酒</h3>
+            <div class="price">$19,999</div>
+            <form id="purchase-form">
+                <button type="submit">立即購買</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="product-card">
+        <img src="././images/wine_02.png" alt="紅酒商品圖片">
+        <div class="product-info">
+            <h3>LUNGAROTTI 紅酒</h3>
+            <div class="price">$20,000</div>
+            <form id="purchase-form">
+                <button type="submit">立即購買</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="product-card">
+        <img src="././images/wine_03.png" alt="紅酒商品圖片">
+        <div class="product-info">
+            <h3>BERINGER 紅酒</h3>
+            <div class="price">$35,000</div>
+            <form id="purchase-form">
+                <button type="submit">立即購買</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // 取得所有的按鈕
+        const buttons = document.querySelectorAll("button");
+
+        // 監聽每個按鈕的 hover 和 click 事件
+        buttons.forEach(button => {
+            button.addEventListener("mouseover", () => {
+                button.style.backgroundColor = "#0056b3";
+            });
+
+            button.addEventListener("mouseout", () => {
+                button.style.backgroundColor = "#007bff";
+            });
+
+            button.addEventListener("click", () => {
+                alert("您已成功添加商品至購物車！");
+            });
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>線上點菜單</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 90%;
+            height: 800px;
+            background-color: lightblue;
+            margin: auto;
+            gap: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            border-radius: 10px;
+            background-image: url(./background.jpg);
+
+        }
+
+        .box {
+            width: 100%;
+            height: 250px;
+            /* background-color: yellowgreen; */
+
+            display: flex;
+            flex-direction: row;
+
+            justify-content: space-evenly;
+        }
+
+        .box1 {
+            border-bottom: 2px solid black;
+        }
+
+        .item {
+            width: 30%;
+            height: 200px;
+            background-color: antiquewhite;
+            margin: 10px;
+            display: flex;
+            justify-content: center;
+            /* 水平置中 */
+            align-items: center;
+            /* 垂直置中 */
+            text-align: center;
+            /* 確保文字在其元素內置中 */
+            font-size: 30px;
+            border-radius: 30px;
+            overflow: hidden;
+
+
+            background-image: url(./background1.jpg);
+            background-size: 100% 100%;
+            /* 讓圖片填滿整個區塊並強制拉伸 */
+            background-size: cover;
+            background-position: center;
+            /* 確保圖片居中顯示 */
+            background-repeat: no-repeat;
+            /* 防止圖片重複 */
+        }
+
+
+
+        .item img {
+            width: 100%;
+            /* 使圖片寬度自適應容器 */
+            max-width: 100%;
+            /* object-fit: cover; */
+            /* 保持圖片比例，並填滿整個容器 */
+            /* height: auto; 保持圖片比例 */
+            display: block;
+            /* 去除圖片底部的間隙 */
+        }
+
+        #numberInput {
+            font-size: 20px;
+            /* 設定文字大小 */
+            width: 100px;
+            /* 設定輸入框的寬度 */
+            height: 40px;
+            /* 設定輸入框的高度 */
+            padding: 20px;
+            /* 設定內邊距，讓文字不會緊貼邊框 */
+            border: 2px solid #ccc;
+            /* 設定邊框的樣式 */
+            border-radius: 5px;
+            /* 設定邊框圓角 */
+        }
+
+        span {
+            color: blue;
+        }
+
+        .total {
+            width: 100%;
+            text-align: right;
+            padding: 20px;
+            background-color: #f0f0f0;
+            /* 背景顏色 */
+            margin-top: 20px;
+            /* 距離上方的間隙 */
+            color: red;
+            /* 設置字體顏色為紅色 */
+            font-size: 48px;
+            /* 設置字體大小 */
+        }
+
+        .total::before {
+            content: "NT $";
+            /* 顯示在數字前 */
+            font-weight: bold;
+        }
+
+        .total::after {
+            content: " 元";
+            /* 顯示在數字後 */
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="container">
+        <div class="box">
+            <div class="item">
+                <img src="./11.jpg" ; alt="">
+            </div>
+            <div class="item">
+                200
+            </div>
+            <div class="item">
+                <input type="number" name="" id="numberInput" value="1">
+            </div>
+            <div class="item">
+                <span>200</span>
+            </div>
+        </div>
+
+
+        <div class="box">
+            <div class="item">
+                <img src="./22.jpg" ; alt="">
+            </div>
+            <div class="item">
+                250
+            </div>
+            <div class="item">
+                <input type="number" name="" id="numberInput" value="1">
+            </div>
+            <div class="item">
+                <span>250</span>
+            </div>
+        </div>
+
+        <div class="box box1">
+            <div class="item">
+                <img src="./44.jpg" ; alt="">
+            </div>
+            <div class="item">
+                200
+            </div>
+            <div class="item">
+                <input type="number" name="" id="numberInput" value="1">
+            </div>
+            <div class="item">
+                <span>200</span>
+            </div>
+        </div>
+
+        <div class="total">
+            600
+        </div>
+    </div>
+
+
+    </div>
+</body>
+
+</html>

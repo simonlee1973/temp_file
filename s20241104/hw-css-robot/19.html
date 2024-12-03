@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>機器人</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* 使盒子整体居中 */
+        }
+
+
+
+        .box {
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin: 10px;
+            /* 添加外边距 */
+            border-radius: 5px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+            width: 200px;
+            /* 设置盒子宽度 */
+        }
+
+        .box.circle {
+            width: 100px;
+            /* 设置圆形盒子的宽度 */
+            height: 100px;
+            /* 设置圆形盒子的高度 */
+            border-radius: 50%;
+            /* 设置边框半径为50%以形成圆形 */
+            display: flex;
+            justify-content: center;
+            /* 水平居中内容 */
+            align-items: center;
+            /* 垂直居中内容 */
+            text-align: center;
+            /* 文字居中 */
+            color: red;
+            background-color: green;
+        }
+
+        .box.square {
+            width: 100px;
+            /* 设置正方形盒子的宽度 */
+            height: 100px;
+            /* 设置正方形盒子的高度 */
+            display: flex;
+            justify-content: center;
+            /* 水平居中内容 */
+            align-items: center;
+            /* 垂直居中内容 */
+            text-align: center;
+            /* 文字居中 */
+            color: red;
+            background-color: green;
+        }
+
+
+
+        .box.rectangle {
+            width: 300px;
+            /* 设置长方形盒子的宽度 */
+            height: 150px;
+            /* 设置长方形盒子的高度 */
+            display: flex;
+            justify-content: center;
+            /* 水平居中内容 */
+            align-items: center;
+            /* 垂直居中内容 */
+            text-align: center;
+            color: green;
+            background-color: red;
+
+        }
+
+
+
+        .main {
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+            color: green;
+
+        }
+
+        table {
+            width: 80%;
+            /* 设置表格宽度为80% */
+            max-width: 300px;
+            /* 设置表格最大宽度 */
+            border-collapse: collapse;
+            margin: 10px auto;
+            /* 使用auto实现水平居中 */
+        }
+
+        th,
+        td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        th.left {
+            color: blue;
+            text-align: right;
+            background-color: yellow;
+            /* 设置左侧单元格文字为蓝色 */
+            /* border-left: 2px solid yellow; */
+            /* 设置左侧边框为黄色 */
+        }
+
+        /* 右侧单元格样式 */
+        th.right {
+            color: yellow;
+            text-align: left;
+            background-color: blue;
+            /* 设置右侧单元格文字为黄色 */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box circle">
+            <h2>頭</h2>
+            <p>這是頭。</p>
+        </div>
+
+
+        <div class="box rectangle">
+            <h2>身體</h2>
+            <p>這是身體。</p>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th class="left"> 短腿左腳</th>
+                    <th class="right">短腿右腳</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+
+
+
+</body>
+
+</html>

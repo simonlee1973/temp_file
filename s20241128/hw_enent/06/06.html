@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>藍芽喇叭 / 音響</title>
+    <style>
+        * {
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: rgb(247, 246, 246);
+        }
+
+        .title {
+            width: 100%;
+            height: 50px;
+            text-align: center;
+            background-color: rgb(213, 232, 238);
+            margin: auto;
+        }
+
+        h3 {
+            font-size: 28px;
+            line-height: 50px;
+        }
+
+        .container {
+            width: 100%;
+            height: 700px;
+
+            margin: auto;
+
+
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        .item {
+            width: 200px;
+            height: 500px;
+            /* background-color: lightpink; */
+
+            display: flex;
+            flex-direction: column;
+        }
+
+        .picture {
+            width: 200px;
+            height: 200px;
+            background-color: antiquewhite;
+        }
+
+        .item1 {
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            background-image: url(./images/2999_1199.jpg);
+            background-size: contain;
+        }
+
+        .item2 {
+            background-image: url(./images/5299_1699.jpg);
+            background-size: contain;
+        }
+
+        .item3 {
+            background-image: url(./images/8699_3399.jpg);
+            background-size: contain;
+        }
+
+        .text {
+            width: 200px;
+            height: 130px;
+            /* background-color: lightcoral; */
+            margin-top: 20px;
+            font-size: 16px;
+            text-align: center;
+        }
+
+        .price {
+            width: 200px;
+            height: 50px;
+            background-color: rgb(228, 226, 226);
+            margin-top: 20px;
+            text-align: center;
+            font-size: 24px;
+            line-height: 50px;
+        }
+
+        .sale1 {
+            width: 200px;
+            height: 50px;
+            background-color: rgb(243, 186, 186);
+            margin-top: 20px;
+            text-align: center;
+
+            line-height: 50px;
+            color: red;
+            font-size: 32px;
+        }
+
+        .sale2 {
+            width: 200px;
+            height: 50px;
+            background-color: rgb(228, 226, 226);
+            margin-top: 20px;
+            text-align: center;
+
+            line-height: 50px;
+            color: red;
+            font-size: 32px;
+        }
+
+        .sale3 {
+            width: 200px;
+            height: 50px;
+            background-color: rgb(228, 226, 226);
+            margin-top: 20px;
+            text-align: center;
+
+            line-height: 50px;
+            color: red;
+            font-size: 32px;
+        }
+
+        .mouseenter {
+            width: 200px;
+            height: 50px;
+            margin-top: 20px;
+            text-align: center;
+            font-size: 24px;
+            line-height: 50px;
+            background-color: rgb(202, 199, 199);
+        }
+
+        .btn {
+            width: 200px;
+            height: 50px;
+            background-color: rgb(228, 226, 226);
+            margin-top: 20px;
+            text-align: center;
+            font-size: 24px;
+            line-height: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="title">
+        <h3>藍芽喇叭 / 音響</h3>
+    </div>
+    <div class="container">
+        <!-- 商品1 -->
+        <div class="item">
+            <!-- 商品圖 -->
+            <div class="picture item1">
+
+            </div>
+            <!-- 商品介紹 -->
+            <div class="text">
+                【演唱會級重低音炮藍牙喇叭】【立體環繞音效】【離線播放】【防塵防水】高級環繞立體音感X6小鋼炮無線藍牙音響藍芽喇叭
+            </div>
+            <!-- 價格文字 -->
+            <div id="box1" class="price">
+                2999
+            </div>
+        </div>
+
+        <!-- 商品2 -->
+        <div class="item ">
+            <!-- 商品圖 -->
+            <div class="picture item2">
+
+            </div>
+            <!-- 商品介紹 -->
+            <div class="text">
+                藝術米奇藍芽喇叭 | RGB炫彩聲光協奏 | 全頻大動圈天籟之音 | 低音加強振膜 | 7小時無線暢聽 | 正版授權可愛米奇藝術美型無線音響藍芽喇叭
+            </div>
+            <!-- 價格文字 -->
+            <div id="box2" class="price">
+                5299
+            </div>
+        </div>
+
+        <!-- 商品3 -->
+        <div class="item">
+            <!-- 商品圖 -->
+            <div class="picture item3">
+
+            </div>
+            <!-- 商品介紹 -->
+            <div class="text">
+                演唱會級重低音炮 | 3D立體環繞音效 | 拾音律動LED幻彩燈效 | CD級高清降噪通話 | 12小時超長續航 | IPX6級防水 | 英國SANAG無線音響藍芽喇叭
+            </div>
+            <!-- 價格文字 -->
+            <div id="box3" class="price">
+                8699
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 1. 綁定
+        let box1 = document.getElementById('box1');
+        let box2 = document.getElementById('box2');
+        let box3 = document.getElementById('box3');
+
+        // 2. 事件
+        // 呈現特價價格
+        box1.addEventListener('click', function () {
+            // 測試用
+            // console.log('box1 click ok');
+            box1.innerHTML = '1199';
+            box1.setAttribute('class', 'sale1')
+        })
+        box2.addEventListener('click', function () {
+            // 測試用
+            // console.log('box2 click ok');
+            box2.innerHTML = '1699';
+            box2.setAttribute('class', 'sale2')
+        })
+        box3.addEventListener('click', function () {
+            // 測試用
+            // console.log('box3 click ok');
+            box3.innerHTML = '3399';
+            box3.setAttribute('class', 'sale3')
+        })
+        // 滑鼠進入效果
+        box1.addEventListener('mouseenter', function () {
+            box1.setAttribute('class', 'mouseenter');
+        })
+        box2.addEventListener('mouseenter', function () {
+            box2.setAttribute('class', 'mouseenter');
+        })
+        box3.addEventListener('mouseenter', function () {
+            box3.setAttribute('class', 'mouseenter');
+        })
+
+        // 滑鼠離開效果
+        box1.addEventListener('mouseleave', function () {
+            // 測試用
+            // console.log('box1 mouseleave ok');
+            box1.setAttribute('class', 'price');
+        })
+        box2.addEventListener('mouseleave', function () {
+            // 測試用
+            // console.log('box2 mouseleave ok');
+            box2.setAttribute('class', 'price');
+        })
+        box3.addEventListener('mouseleave', function () {
+            // 測試用
+            // console.log('box3 mouseleave ok');
+            box3.setAttribute('class', 'price');
+        })
+    </script>
+</body>
+
+</html>

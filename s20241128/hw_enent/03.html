@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js_addEvent</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            overflow: hidden;
+
+        }
+
+        #bg {
+
+            background-image: url(https://bbqchicken.com.tw/images/index/info_title.svg );
+            background-repeat: no-repeat;
+            background-size: 250px, 250px;
+            background-attachment: fixed;
+            background-position: 4% 93%;
+            background-color: rgb(238, 250, 255);
+        }
+
+
+
+        header {
+            display: flex;
+            /* flex-direction: column; */
+            justify-content: space-around;
+        }
+
+
+        .box {
+            width: 30%;
+            height: 75vh;
+            /* background-color: skyblue; */
+
+        }
+
+
+        main {
+            width: 100%;
+            height: 70%;
+            /* background-color: salmon; */
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .main-footer {
+            width: 100%;
+            height: 30%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .main-footer-left {
+            width: 70%;
+            height: 70%;
+            /* background-color: white; */
+            text-align: center;
+            font-size: 24px;
+            padding-top: 10px;
+            font-weight: bold;
+        }
+
+
+        .main-footer-right {
+            width: 70%;
+            height: 70%;
+            /* background-color: silver; */
+            text-align: center;
+            font-size: 24px;
+            color: red;
+            font-weight: bold;
+            padding-top: 20px;
+            opacity: 0;
+        }
+
+        .main-footer-right-change {
+            width: 70%;
+            height: 70%;
+            /* background-color: silver; */
+            text-align: center;
+            font-size: 32px;
+            color: red;
+            font-weight: bold;
+            padding-top: 20px;
+            opacity: 1;
+            transition: 0.5s;
+        }
+
+        .span1 {
+            font-size: 24px;
+
+        }
+
+        .span1-change {
+            text-decoration: line-through;
+        }
+
+        .span2 {
+            font-size: 24px;
+
+        }
+
+        .span2-change {
+            text-decoration: line-through;
+        }
+
+        .span3 {
+            font-size: 24px;
+
+        }
+
+        .span3-change {
+            text-decoration: line-through;
+        }
+
+        .bg-blue {
+            background-color: blue;
+        }
+
+        .bg-red {
+            background-color: red;
+        }
+
+        .bg-green {
+            background-color: green;
+        }
+
+        button {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body id="bg">
+    <header>
+        <!-- box1 -->
+        <div class=" box">
+            <main>
+                <img
+                    src="https://bbqchicken.com.tw/images/maintain/menu/%e7%b6%93%e5%85%b8%e7%82%b8%e9%9b%9e/%e9%9f%93%e5%bc%8f%e6%96%99%e7%90%86%e5%ba%97-%e8%b5%b7%e5%8f%b8%e5%8d%8a%e9%9b%9e.png">
+            </main>
+            <div class="main-footer">
+                <!-- 左 -->
+                <div class="main-footer-left">
+                    起司炸雞<br>
+                    <span id="span1" class="span1">原價349元</span>
+                </div>
+                <!-- 右 -->
+                <div id="box1" class="main-footer-right">
+                    今天特價299元
+                </div>
+            </div>
+        </div>
+        <!-- box2 -->
+        <div class=" box">
+            <main>
+                <img
+                    src="https://bbqchicken.com.tw/images/maintain/menu/%e7%b6%93%e5%85%b8%e7%82%b8%e9%9b%9e/%e9%9f%93%e5%bc%8f%e6%96%99%e7%90%86%e5%ba%97-%e8%be%a3%e5%91%b3%e7%87%92%e8%82%89%e9%a2%a8%e5%91%b3.png">
+            </main>
+            <div class="main-footer">
+                <!-- 左 -->
+                <div class="main-footer-left">
+                    辣味燒肉風味炸雞<br>
+                    <span id="span2">原價349元</span>
+                </div>
+                <!-- 右 -->
+                <div id="box2" class="main-footer-right">
+                    今天特價299元
+                </div>
+            </div>
+        </div>
+        <!-- box3 -->
+        <div class=" box">
+            <main>
+                <img
+                    src="https://bbqchicken.com.tw/images/maintain/menu/%e7%b6%93%e5%85%b8%e7%82%b8%e9%9b%9e/%e9%9f%93%e5%bc%8f%e6%96%99%e7%90%86%e5%ba%97-%e9%9f%93%e5%bc%8f%e7%94%98%e9%86%ac%e5%8d%8a%e9%9b%9e.png">
+            </main>
+            <div class="main-footer">
+                <!-- 左 -->
+                <div class="main-footer-left">
+                    韓式甘醬炸雞<br>
+                    <span id="span3">原價349元</span>
+                </div>
+                <!-- 右 -->
+                <div id="box3" class="main-footer-right">
+                    今天特價299元
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+
+
+
+    <script>
+        // function
+        // 1.綁定 bind
+        // 2.事件 action
+        // 1.綁定 bind
+        // let 冷氣 = document.getElementById('冷氣');
+        let box1 = document.getElementById('box1');
+        let box2 = document.getElementById('box2');
+        let box3 = document.getElementById('box3');
+        let span1 = document.getElementById('span1');
+        let span2 = document.getElementById('span2');
+        let span3 = document.getElementById('span3');
+        let count = 0;
+        // 2.事件 action
+        // 點擊box(click)會出現console.log
+        // 滑鼠點擊出現事件
+        box1.addEventListener('click', function () {
+            console.log('box click ok');
+            box.setAttribute('class', 'bg-red');
+            count++
+            console.log(`點擊次數:${count}`)
+        })
+        // ================box1
+        // mouseenter 滑鼠滑到出現事件
+        box1.addEventListener('mouseenter', function () {
+            console.log('box click ok');
+            box1.setAttribute('class', 'main-footer-right-change');
+            span1.setAttribute('class', 'span1-change')
+            count++
+            console.log(`次數:${count}`)
+        })
+        // mouseenter 滑鼠離開出現事件
+        box1.addEventListener('mouseleave', function () {
+            console.log('box click ok');
+            box1.setAttribute('class', 'main-footer-right');
+            span1.setAttribute('class', 'span1')
+            count++
+            console.log(`次數:${count}`)
+        })
+        // ===============box2
+        box2.addEventListener('mouseenter', function () {
+            console.log('box click ok');
+            box2.setAttribute('class', 'main-footer-right-change');
+            span2.setAttribute('class', 'span2-change')
+            count++
+            console.log(`次數:${count}`)
+        })
+        // mouseenter 滑鼠離開出現事件
+        box2.addEventListener('mouseleave', function () {
+            console.log('box click ok');
+            box2.setAttribute('class', 'main-footer-right');
+            span2.setAttribute('class', 'span2')
+
+            count++
+            console.log(`次數:${count}`)
+        })
+        // ================box3
+        box3.addEventListener('mouseenter', function () {
+            console.log('box click ok');
+            box3.setAttribute('class', 'main-footer-right-change');
+            span3.setAttribute('class', 'span3-change')
+            count++
+            console.log(`次數:${count}`)
+        })
+        // mouseenter 滑鼠離開出現事件
+        box3.addEventListener('mouseleave', function () {
+            console.log('box click ok');
+            box3.setAttribute('class', 'main-footer-right');
+            span3.setAttribute('class', 'span3')
+
+            count++
+            console.log(`次數:${count}`)
+        })
+
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+            // 設置每個商品的原始價格
+            var originalPrices = {
+                box1: 150,
+                box2: 200,
+                box3: 100
+            };
+
+            // 設置修改後的價格
+            var updatedPrices = {
+                box1: 180,
+                box2: 220,
+                box3: 120
+            };
+
+            // 初始化總價
+            var total = originalPrices.box1 + originalPrices.box2 + originalPrices.box3;
+
+            // 顯示初始總價
+            $('#totalPrice').text('總價: ' + total + '元');
+
+            // 更新總價顯示
+            function updateTotal() {
+                $('#totalPrice').text('總價: ' + total + '元');
+            }
+
+            // 當使用者點擊 box1 時，修改價格並更新總價
+            $('#box1').click(function () {
+                $(this).find('p').text('薯條 ' + updatedPrices.box1 + '元');
+                total = total - originalPrices.box1 + updatedPrices.box1; // 更新總價
+                updateTotal();
+            }).dblclick(function () {
+                $(this).find('p').text('薯條 ' + originalPrices.box1 + '元');
+                total = total - updatedPrices.box1 + originalPrices.box1; // 恢復原價並更新總價
+                updateTotal();
+            });
+
+            // 當使用者點擊 box2 時，修改價格並更新總價
+            $('#box2').click(function () {
+                $(this).find('p').text('漢堡 ' + updatedPrices.box2 + '元');
+                total = total - originalPrices.box2 + updatedPrices.box2; // 更新總價
+                updateTotal();
+            }).dblclick(function () {
+                $(this).find('p').text('漢堡 ' + originalPrices.box2 + '元');
+                total = total - updatedPrices.box2 + originalPrices.box2; // 恢復原價並更新總價
+                updateTotal();
+            });
+
+            // 當使用者點擊 box3 時，修改價格並更新總價
+            $('#box3').click(function () {
+                $(this).find('p').text('可樂 ' + updatedPrices.box3 + '元');
+                total = total - originalPrices.box3 + updatedPrices.box3; // 更新總價
+                updateTotal();
+            }).dblclick(function () {
+                $(this).find('p').text('可樂 ' + originalPrices.box3 + '元');
+                total = total - updatedPrices.box3 + originalPrices.box3; // 恢復原價並更新總價
+                updateTotal();
+            });
+        });
+    </script>
+    </script>
+</head>
+
+<body>
+    <div class="outer-container">
+
+
+        <!-- 第一組容器 -->
+        <div class="container">
+            <div class="box1" id="box1"><img
+                    src="https://www.gqfood.com.tw/archive/image/product1/images/38super_05.jpg" width=150px
+                    height=150px>
+                <p>薯條 150元</p>
+            </div>
+            <div class="box1" id="box2"><img
+                    src="https://s7d1.scene7.com/is/image/mcdonalds/hamburger_832x822:1-3-product-tile-desktop?wid=829&hei=515&dpr=off"
+                    width=150px height=150px>
+                <p>漢堡 200元</p>
+            </div>
+            <div class="box1" id="box3"><img
+                    src="https://www.coca-cola.com/content/dam/onexp/tw/zh/home-images/brands/coca-cola/twtc_coca-cola_prod_coke%20classic%20600ml_750x750.png"
+                    width=150px height=150px>
+                <p>可樂 100元</p>
+            </div>
+        </div>
+
+        <!-- 第二組容器 -->
+        <div id="totalPrice" style="margin-top: 20px; font-size: 20px;">
+            總價: 450元
+        </div>
+
+
+    </div>
+</body>
+
+</html>

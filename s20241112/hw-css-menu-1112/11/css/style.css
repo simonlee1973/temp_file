@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Noto Sans TC", serif;
+    color: #333333;
+}
+
+.container {
+    max-width: 768px;
+    margin: 0 auto;
+}
+
+.banner {
+    width: 100%;
+    height: 32vh;
+    background-image: url(../images/banner.jpg);
+    background-size: cover;
+    border-radius: 0px 0px 20px 20px;
+}
+
+/* ==== 主要 ==== */
+.main {
+    background-color: #fff;
+    padding: 32px;
+    position: relative;
+}
+
+.logo {
+    width: 200px;
+    height: 200px;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 100px;
+    background-image: url(../images/logo.jpg);
+    background-size: contain;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -80%);
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: bolder;
+    text-align: center;
+    margin: 64px 20px 24px;
+}
+
+h2 {
+    padding: 20px 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-indent: 16px;
+}
+
+h3 {
+    padding: 16px 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+    /* text-indent: 16px; */
+}
+
+.items-list {
+    border-radius: 8px;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
+
+form {
+    width: 100%;
+}
+
+.item,
+.checkout_item {
+    width: 100%;
+    padding: 20px 40px 20px 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.item {
+    cursor: pointer;
+}
+
+.img {
+    min-width: 100px;
+    height: 100px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 8px;
+    background-color: white;
+}
+
+.optionImg {
+    /* min-width: 100%; */
+    width: 100%;
+    padding-top: 100%;
+    /* height: auto; */
+}
+
+.name {
+    font-weight: bold;
+}
+
+.info {
+    width: 80%;
+    padding: 8px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.info p {
+    margin-bottom: 8px;
+}
+
+.info .depiction {
+    color: #8d8d8d;
+}
+
+.fa-circle-plus,
+.fa-circle-xmark {
+    font-size: 32px;
+    opacity: 0.3;
+    cursor: pointer;
+}
+
+.inputNum {
+    border-radius: 8px;
+    padding: 4px;
+    width: 60px;
+    border: 1px solid #333333;
+}
+
+#checkoutCost,
+#orderCost {
+    float: right;
+    opacity: 0.5;
+}
+
+/* ==== 彈窗 ==== */
+dialog {
+    width: 100%;
+    max-width: 500px;
+    height: 90vh;
+    border-radius: 24px;
+    padding: 40px;
+    padding-bottom: 8px;
+    margin: auto;
+}
+
+dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.75);
+}
+
+#orderOptions .info {
+    padding: 0;
+}
+
+#orderOptions p {
+    padding: 8px;
+    display: flex;
+    align-items: center;
+}
+
+#orderOptions label {
+    width: 100%;
+    padding: 8px;
+    vertical-align: middle;
+    user-select: none;
+}
+
+input[type="radio"] {
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+}
+
+.xmark {
+    position: sticky;
+    top: 0;
+    float: right;
+    z-index: 1000;
+    padding: 0 12px;
+}
+
+
+/* 總計 */
+.total {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 64px;
+}
+
+/* 按鈕 */
+.button {
+    background-color: #b6e887;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: sticky;
+    bottom: 0;
+}
+
+.return {
+    font-size: 1rem;
+    width: 120px;
+}
+
+.button:hover {
+    background-color: #a3db73;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+}
+
+.button:active {
+    background-color: #90c961;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(0.95);
+}
+
+/* 分隔線 */
+hr {
+    border-color: #8d8d8d2a;
+}

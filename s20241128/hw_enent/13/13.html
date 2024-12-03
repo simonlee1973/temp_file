@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>飛來飛去旅行社</title>
+    <style>
+        body {
+            background-color: powderblue;
+        }
+
+        .container {
+            display: flex;
+            padding-top: -30px;
+            margin: auto;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            width: 80vw;
+            height: 80vh;
+            background-color: palegoldenrod;
+
+            background-image: url("images/Okinawa_cover-1.jpg");
+            background-size: cover;
+            border-radius: 20px;
+            box-shadow: 10px 10px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .title {
+            padding-top: 20px;
+            width: 100%;
+            height: 2%;
+            font-family: '標楷體';
+            font-size: 64px;
+            text-align: center;
+            color: powderblue;
+
+            text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.7);
+        }
+
+        .item {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 30%;
+            height: 60%;
+            background-color: rgba(17, 85, 163, 0.3);
+            border-radius: 20px;
+            box-shadow: 10px 10px 8px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        img {
+            padding-top: 20px;
+
+            width: 80%;
+            height: 60%;
+            margin: auto;
+            border-radius: 40px;
+            object-fit: cover;
+        }
+
+        /* 設置按鈕樣式 */
+        .button {
+            /* 上下左右的間距 */
+            padding: 15px 30px;
+            /* 字體大小 */
+            font-size: 30px;
+            /* 文字顏色 */
+            color: white;
+            /* 漸變背景 */
+            background: linear-gradient(45deg, #ff6a00, #ee0979);
+            /* 移除邊框 */
+            border: none;
+            /* 圓角 */
+            border-radius: 20px;
+            /* 鼠標懸停時顯示為可點擊狀態 */
+            cursor: pointer;
+            /* 文字陰影 */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            /* 過渡效果 */
+            transition: transform 0.2s ease, box-shadow 0.3s ease;
+            /* 字體 */
+            font-family: 'Arial', sans-serif;
+
+        }
+
+        /* 當鼠標懸停時，改變按鈕樣式 */
+        .button:hover {
+            transform: translateY(-5px);
+            /* 向上移動效果 */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            /* 強化陰影效果 */
+            font-size: 38px;
+        }
+
+        /* 當按鈕按下時，給按鈕增加內縮效果 */
+        .button:active {
+            transform: translateY(2px);
+            /* 按下時向下縮小效果 */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            /* 減弱陰影 */
+        }
+
+        marquee {
+            font-family: '標楷體', sans-serif;
+            font-size: 36px;
+            color: #ff6a00;
+            text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.9);
+        }
+
+        .maritem {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 100%;
+            height: 10%;
+            background-color: rgba(17, 85, 163, 0.7);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="title">
+            飛來飛去旅行社
+        </div>
+        <div class="item">
+            <img src="./images/曼谷.jpg" alt="">
+            <button class="button" id="b1">原價:30000元 點擊我有優惠</button>
+        </div>
+        <div class="item">
+            <img src="./images/東京.jpg" alt="">
+            <button class="button" id="b2">原價:10000元 有點擊有保佑</button>
+        </div>
+        <div class="item">
+            <img src="./images/澳門.jpg" alt="">
+            <button class="button" id="b3">原價:3000元 點擊我有驚嚇價</button>
+        </div>
+        <div class="maritem">
+            <marquee behavior="" direction="" scrollamount="15">
+                「別再宅在家了！讓我們帶你去旅行，保證比 Netflix 更精彩，還有意外折扣等你來拿！」
+            </marquee>
+        </div>
+    </div>
+    <script>
+        function mEnter(obj) {
+            regtxt = obj.textContent;
+            obj.textContent = "還在想什麼 趕快點下去";
+        }
+        function mlevave(obj) {
+            obj.textContent = regtxt;
+        }
+
+        let b1 = document.getElementById('b1');
+        let b2 = document.getElementById('b2');
+        let b3 = document.getElementById('b3');
+        let regtxt = '';
+
+        b1.addEventListener('mouseenter', function () { mEnter(this) });
+        b2.addEventListener('mouseenter', function () { mEnter(this) });
+        b3.addEventListener('mouseenter', function () { mEnter(this) });
+        //點下去
+        b1.addEventListener('click', function () {
+            this.textContent = '今天優惠 3000元';
+        });
+
+        b2.addEventListener('click', function () {
+            this.textContent = '今天只要 7*300元';
+        });
+
+        b3.addEventListener('click', function () {
+            this.textContent = '驚嚇價 300000元';
+        });
+
+        b1.addEventListener('mouseleave', function () {
+            mlevave(this);
+        });
+        b2.addEventListener('mouseleave', function () {
+            mlevave(this);
+        });
+        b3.addEventListener('mouseleave', function () {
+            mlevave(this);
+        });
+
+    </script>
+</body>
+
+</html>

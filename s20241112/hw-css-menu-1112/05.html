@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        /* logo design */
+        .header{
+            width: 120px;
+            height: 80px;
+            margin: auto;
+            text-align: center;
+            font-weight: 800;
+            font-size: 30px;
+            border-radius: 50%;
+            border: 5px dashed brown;
+            padding-top: 15px;
+            margin-bottom: 20px;
+        }
+
+        /* 主體 */
+        .container {
+            font-size: 20px;
+            margin: auto;
+            width: 80%;
+            height: 90vh;
+            background-color: wheat;
+            border-radius: 20px;
+            border: 10px double burlywood;
+
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-around;
+
+        }
+        /* 每個品項 */
+        div.item {
+            width: 90%;
+            height: 20vh;
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 20px;
+
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        /* 圖片 */
+        .pic {
+            width: 15vh;
+            height: 15vh;
+            background-size: 10vh;
+            background-position: center;
+            background-size: cover;
+        }
+        .pic1 {
+            background-image: url('https://i.pinimg.com/564x/80/35/60/803560020f0f772bb12862e1eb2f50c0.jpg');
+        }
+        .pic2 {
+            background-image: url('https://i.pinimg.com/564x/03/11/5b/03115b2f81e1f86f9dd6bd3604c6c500.jpg');
+        }
+        .pic3 {
+            background-image: url('https://i.pinimg.com/564x/35/86/65/3586655e13851f03c368bc15726069f4.jpg');
+        }
+
+        /* 數量 */
+        input[type="number"]{
+            width: 80px;
+        }
+
+        /* 單品總額 */
+        .total {
+            font-weight: bold;
+            color: blue;
+        }
+
+        /* 總計 */
+        .subTotal{
+            background-color: rgba(173, 216, 230,0.5);
+            position: fixed;
+            bottom: 0px;
+            width: 100%;
+            font-size: 30px;
+            font-weight: bold;
+            
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+        }
+        
+        /* 商品總額 */
+        .subAmount{
+            margin-right: 5%;
+            margin-left: 10px;
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        甜點屋
+    </div>
+    <!-- 主體 -->
+    <div class="container">
+        <!-- 第一個品項 -->
+        <div class="item item1">
+            <!-- 圖片 -->
+            <div class="box pic pic1"></div>
+            <!-- 價格 -->
+            <div class="box price"> NT$100</div>
+            <!-- 數量 -->
+            <div class="box input first">
+                <input type="number" name="blueberryCheesecake" id="blueberryCheesecake" value="3">
+            </div>
+            <!-- 單品總額 -->
+            <div class="box total"> NT$300 </div>
+        </div>
+        <!-- 第二個品項 -->
+        <div class=" item item2">
+            <!-- 圖片 -->
+            <div class="box pic pic2"></div>
+            <!-- 價格 -->
+            <div class="box price">NT$130</div>
+            <!-- 數量 -->
+            <div class="box input">
+                <input type="number" name="tiramisu" id="tiramisu" value="2">
+            </div>
+            <!-- 單品總額 -->
+            <div class="box total">NT$260</div>
+        </div>
+        <!-- 第三個品項 -->
+        <div class="item item3">
+            <!-- 圖片 -->
+            <div class="box pic pic3"></div>
+            <!-- 價格 -->
+            <div class="box price">NT$160</div>
+            <!-- 數量 -->
+            <div class="box input">
+                <input type="number" name="waffle" id="waffle" value="2">
+            </div>
+            <!-- 單品總額 -->
+            <div class="box total">NT$320</div>
+        </div>
+    </div>
+
+    <!-- 總計 -->
+    <div class="subTotal">
+        <div>總計</div>
+        <div class="subAmount"> NT$880</div>
+    </div>
+</body>
+
+</html>
